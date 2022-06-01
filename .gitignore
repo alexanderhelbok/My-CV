@@ -2,6 +2,9 @@
 **/figures
 *.synctex.gz
 *.log
+*.aux
+*.out
+*.synctex
 .directory
 .stfolder
 organizer.sh

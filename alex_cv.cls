@@ -77,12 +77,20 @@
     
 %contactsubviews 
 
+\newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
+\newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
+\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedin\ \footnotesize linkedin}}
+\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+
 \newcommand{\name}{%
     {\LARGE \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\normalsize \@city/\@country  \cps \@mobile \\ \@mail} % 
+        {\normalsize \@city/\@country  \cps \@mobile \\ \@mail
+%        \\%									uncomment for linkedin + github link in contact card
+%        \linkedinview \cps \githubview \\% 	uncomment for linkedin + github link in contact card
+    	} % 
 }
 
 % Covverletterview
@@ -132,11 +140,13 @@ Position: & \@claimedposition \\
 	\hspace{7.7em}\begin{minipage}{0.75\linewidth}\sloppy\small{#2} \end{minipage} \vspace{0.15cm}
 }
 
+% usage: \education{Name}{Attendance time}{brief explanation}
 \newcommand{\education}[3]{%
 	\begin{normalsize} \mbox { \hspace{7em} \scshape \textbf{#1} } \end{normalsize} \hfill \datetext{#2}\\[0.01cm] %
 	\mbox { \scshape \hspace{7.3em} \small #3} 
 }
 
+% usage: \experiences{Name}{Time}{brief explanation}
 \newcommand{\experiences}[3]{%
 	\begin{normalsize} \mbox { \hspace{7em} \scshape \textbf{#1} } \end{normalsize} \hfill \datetext{#2}\\[0.01cm] %
 	\mbox { \scshape \hspace{7.3em} \small #3}%
@@ -153,11 +163,13 @@ Position: & \@claimedposition \\
 
 \newcommand{\bigsize}{\fontsize{14pt}{20pt}\selectfont}
 
+% usage: \icon{File Name}{Height in Document}{horizontal space}
 \newcommand{\icon}[3]{%
 	\begin{minipage}{#3cm}\includegraphics[height=#2cm]{#1}\end{minipage}
 }
 
-\newcommand{\Hobbie}[4]{%
+% usage: \Hobby{Hobby name}{File Name}{Height in Document}{horizontal space}
+\newcommand{\Hobby}[4]{%
 		\;\icon{#2}{#3}{#4}\mbox{\small #1}
 }
 

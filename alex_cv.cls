@@ -156,6 +156,7 @@ Position: & \@claimedposition \\
 {\itshape  \small \mdseries  \color{black!60!\@themecolor} #1 } 
 }
 
+% usage: \createskill{Name (can be left blank)}{Skill entries}
 \newcommand\createskill[2]{%
 	\textsc{\small\textbf{#1}} & \small #2
 }

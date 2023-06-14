@@ -1,3 +1,4 @@
+% !TeX root = CV_Alexander_Helbok.tex
 % this is inspired by Michael Pollind's Awesome CV 
 \author{Alexander Helbok}
 \date{\today}
@@ -53,7 +54,8 @@
 % can makebox also be used?
 \newcommand\headerview{
 \begin{minipage}{0.25\linewidth}
-    \profpic{0.3}{profilpicture1}
+%	\profpic{0.3}{profilpicture1}
+    \profpic{0.133}{profilpicture2}
 \end{minipage}% 
 \hfill
 \begin{minipage}{0.45\linewidth}
@@ -68,7 +70,9 @@
 \newcommand{\profpic}[2]{%
     \savebox{\picbox}{%
     \includegraphics[scale=#1]{#2}}% 
-    \tikz\node [draw, circle,%
+    \tikz\node [draw,%
+%    circle,%
+    rectangle, rounded corners=20pt,%
     line width=4pt, color=white,% 
     minimum width=\wd\picbox,minimum height=\ht\picbox,%
     path picture={ \node at (path picture bounding box.center)% 
